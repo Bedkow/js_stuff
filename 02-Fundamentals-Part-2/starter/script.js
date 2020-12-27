@@ -71,3 +71,34 @@
 
 // fruitProcessor(2, 3);
 
+// @@@@@@@@@ ARRAYS
+
+// Exercise
+
+// const calcAge = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+
+// const years = [1990, 1967, 2002, 2010, 2018];
+
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+
+// const ages = [age1, age2, age3] // OR just call functions from above
+
+// @@ more arrays
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+
+// friends.push('Jay');
+// friends.unshift('John');
+
+// friends.pop(); // returns the removed element
+// friends.shift(); // returns the removed element
+
+// friends.indexOf('Steven'); // index of 'Steven', if missing returns -1
+// friends.includes('Steven'); // returns true/false, tests strict value
+
+
+
