@@ -101,4 +101,74 @@
 // friends.includes('Steven'); // returns true/false, tests strict value
 
 
+// @@@@ OBJECTS@@@@@@@@@@@@@@@@@@@@@@@
 
+// const daniel = {
+//     firstName: 'Daniel',
+//     lastName: 'Bednarek',
+//     age: 2021 - 1994,
+//     job: 'publisher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// };
+
+// console.log(daniel.lastName);
+// console.log(daniel['lastName']);
+
+// const nameKey = 'Name';
+// console.log(daniel['first' + nameKey]);
+// console.log(daniel['last' + nameKey]);
+
+// const interestedIn = prompt('firstName/lastName/age/job/friends');
+
+// if (daniel[interestedIn]) {
+// console.log(daniel[interestedIn]);
+// } else {
+//     console.log('Wrong request!')
+// }
+
+// daniel.location = 'Poland';
+// daniel['GitHub'] = '@Bedkow';
+
+// console.log(daniel.firstName + ' has ' + daniel.friends.length + ' friends, and his best friend is ' + daniel.friends[0]);
+
+const daniel = {
+    firstName: 'Daniel',
+    lastName: 'Bednarek',
+    birthYear: 1994,
+    job: 'publisher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hadDriversLicence: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2020 - birthYear;
+    // }
+    // calcAge: function () {
+    //     return 2020 - this.birthYear;
+    // }
+    calcAge: function () {
+        this.age = 2020 - this.birthYear;
+        return this.age;
+    }
+};
+
+console.log(daniel.calcAge());
+console.log(daniel.age);
+// function licence (daniel) {
+//     if (daniel.hadDriversLicence == true) {
+//         word = "a";
+//     } else {
+//         word = "no";
+//     } return word;
+// }
+
+// @@ mini challenge (i didnt use this.object) @@
+var word
+if (daniel.hadDriversLicence == true) {
+    word = "a";
+    } else {
+    word = "no";
+    }
+
+
+console.log(daniel.firstName + " is a " + daniel.age + "-year old " + daniel.job + ", and he has " + word
++ " driver's licence")
