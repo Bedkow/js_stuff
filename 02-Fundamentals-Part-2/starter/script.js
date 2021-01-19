@@ -131,13 +131,13 @@
 
 // console.log(daniel.firstName + ' has ' + daniel.friends.length + ' friends, and his best friend is ' + daniel.friends[0]);
 
-const daniel = {
-    firstName: 'Daniel',
-    lastName: 'Bednarek',
-    birthYear: 1994,
-    job: 'publisher',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hadDriversLicence: true,
+// const daniel = {
+//     firstName: 'Daniel',
+//     lastName: 'Bednarek',
+//     birthYear: 1994,
+//     job: 'publisher',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hadDriversLicence: true,
 
     // calcAge: function (birthYear) {
     //     return 2020 - birthYear;
@@ -145,14 +145,14 @@ const daniel = {
     // calcAge: function () {
     //     return 2020 - this.birthYear;
     // }
-    calcAge: function () {
-        this.age = 2020 - this.birthYear;
-        return this.age;
-    }
-};
+//     calcAge: function () {
+//         this.age = 2020 - this.birthYear;
+//         return this.age;
+//     }
+// };
 
-console.log(daniel.calcAge());
-console.log(daniel.age);
+// console.log(daniel.calcAge());
+// console.log(daniel.age);
 // function licence (daniel) {
 //     if (daniel.hadDriversLicence == true) {
 //         word = "a";
@@ -162,13 +162,110 @@ console.log(daniel.age);
 // }
 
 // @@ mini challenge (i didnt use this.object) @@
-var word
-if (daniel.hadDriversLicence == true) {
-    word = "a";
-    } else {
-    word = "no";
-    }
+// var word
+// if (daniel.hadDriversLicence == true) {
+//     word = "a";
+//     } else {
+//     word = "no";
+//     }
 
 
-console.log(daniel.firstName + " is a " + daniel.age + "-year old " + daniel.job + ", and he has " + word
-+ " driver's licence")
+// console.log(daniel.firstName + " is a " + daniel.age + "-year old " + daniel.job + ", and he has " + word
+// + " driver's licence")
+
+// @@@@@@@@@@@@@@@@@@@@@ loops
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log("REP " + rep);
+// }
+
+// const array = [
+//     "Daniel",
+//     "Bednarek",
+//     2021 - 1994,
+//     "publisher",
+//     ["Michael", "Peter", "Steven"],
+//     true
+// ];
+
+// const types = [];
+
+
+// for (let i = 0; i < array.length ; i++) {
+//     console.log(array[i], typeof array[i]);
+
+//     // types[i] = typeof array[i];
+//     // or
+//     types.push(typeof array[i]);
+// }
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2021 - years[i]);
+// }
+
+// console.log(ages); 
+// @@@ break and continue @@@
+
+// const array = [
+//     "Daniel",
+//     "Bednarek",
+//     2021 - 1994,
+//     "publisher",
+//     ["Michael", "Peter", "Steven"],
+// ];
+
+
+// console.log('ONLY STRINGS');
+
+// for (let i = 0; i < array.length ; i++) {
+//     if(typeof array[i] !== 'string') continue;
+//     console.log(array[i], typeof array[i]);
+// }
+
+// // continue - continues/ignores only the current iteration
+// // break - breaks the whole loop
+
+// console.log('BREAK WITH NUMBER');
+
+// for (let i = 0; i < array.length ; i++) {
+//     if(typeof array[i] === 'number') break;
+//     console.log(array[i], typeof array[i]);
+// }
+
+// const array = [
+//     "Daniel",
+//     "Bednarek",
+//     2021 - 1994,
+//     "publisher",
+//     ["Michael", "Peter", "Steven"],
+//     true,
+// ];
+
+// for(let i = array.length - 1; i >= 0; i--) {
+//     console.log(i, array[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`------- Starting exercise ${exercise}`);
+
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`lifting weight repetition ${rep}`);
+//     }
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`lifting weight repetition ${rep}`);
+
+//     rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// while (dice !== 6) {
+//     console.log(`You rolled a ${dice}`);
+//     dice = Math.trunc(Math.random() * 6) + 1;
+//     if (dice === 6) console.log ('you got 6!')
+// }
