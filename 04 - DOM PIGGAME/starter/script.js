@@ -19,6 +19,7 @@ diceEl.classList.add('hidden');
 const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 
 const switchPlayer =  function() {
     // Switch to next player
@@ -32,6 +33,7 @@ const switchPlayer =  function() {
 
 // Rolling dice function
 btnRoll.addEventListener('click', function() {
+    if(playing) {
     // Generate random roll
     const dice = Math.trunc(Math.random() * 6) + 1;
     // Display the dice
@@ -44,17 +46,43 @@ btnRoll.addEventListener('click', function() {
         document.getElementById(`current--${activePlayer}`).textContent = currentScore;
     } else {
         switchPlayer();
-    }
+    } 
+}
 });
 
 btnHold.addEventListener('click', function() {
+    if (playing) {
     // add current score to active player score
     scores[activePlayer] += currentScore;
     // scores[1] = scores[1] + currentScore
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
     //check if score is min 100
+    if (scores[activePlayer] >= 100) {
     //Finish the game
+        diceEl.classList.add('hidden');
+        playing = false;
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+} else {
+        //Switch player
+        switchPlayer();
+}
+}
+});
 
-    //Switch player
-    switchPlayer();
+btnNew.addEventListener('click', function() {
+    //can create a function to DRY the code
+score0El.textContent = 0;
+score1EL.textContent = 0;
+player0El.classList.remove('player--winner');
+player1El.classList.remove('player--winner');
+player0El.classList.add('player--active');
+player1El.classList.remove('player--active');
+current0El.textContent = 0;
+current1El.textContent = 0;
+
+scores = [0, 0];
+currentScore = 0;
+activePlayer = 0;
+playing = true;
 });
