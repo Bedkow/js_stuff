@@ -24,7 +24,20 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00', 
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+      );
+  },
 };
+
+
 /*
 //@@@@@@@@@@@@@@@ Arrays @@@@@@@@@@@@@@//
 const arr = [2, 3, 4];
@@ -61,7 +74,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); // the default value (1) is left for 'r'
 */
 //@@@@@@@@@@@@ Objects @@@@@@@@@@@@@@//
-
+/*
 const { name, openingHours, categories } = restaurant; // order in objs doesnt matter so no need to "skip" like in arr
 console.log(name, openingHours, categories);
 
@@ -72,3 +85,36 @@ const { //destruct + giving different variable names
 } = restaurant;
 console.log(restaurantName, hours, tags);
 
+// with default values
+const { menu = [], starterMenu: starters = []} = restaurant;
+
+//mutating variables
+
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c:14};
+
+({a, b} = obj); // HAS TO BE WRAPPED IN () ! otherwise SyntaxEr
+
+console.log(a, b);
+
+
+//nested objects
+
+const {
+  fri: {open: o, close: c}, //giving different names
+} = openingHours;
+console.log(o, c);
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Winiary, 10',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Piątkowska 2137',
+  starterIndex: 1,
+})
+*/
