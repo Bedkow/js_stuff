@@ -35,6 +35,14 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
       );
   },
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  },
+
+  orderPizza: function(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 
@@ -118,3 +126,92 @@ restaurant.orderDelivery({
   starterIndex: 1,
 })
 */
+
+//@@@@@@@@ Spread operator @@@@@@@@@@@//
+/*
+//bad example
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+// good example
+const newArr = [1, 2, ...arr]; //"...xyz" spreads the array xyz into individual entries
+console.log(newArr);
+console.log(...newArr); // returns all the elements individually 
+// doesn't create new variables, turns the array into individual values, can be used only in places where we'd use values separated with commas
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu]; // shallow copy
+
+// join 2 arrays
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// spread operator works on all iterables (maps, strings, arrays, sets BUT NOT objects)
+
+const str = 'Daniel';
+const letters = [...str, '', 'B.'];
+console.log(letters);
+
+// const ingredients = [prompt("Let's make pasta. Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// spread operator works on Objects since ES2018
+// Objects//
+
+const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Guiseppe'} // spreads all the properties and copies them to the new object, can add more properties (here founder, founding year), the order does not matter 
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant}; //copy obj
+restaurantCopy.name = 'Ristorante Roma'; //overwrite name
+*/
+
+
+//@@@@@@@@@@@@@@@@@@@@@@ THE REST PATTERN @@@@@@@@@@@@@
+// opposite of the spread operator
+//to "pack" an array/object
+
+// 1. Destructuring:
+
+//arrays
+
+//SPREAD because on the RIGHT side of "="
+const arr = [1, 2, ...[3, 4]];
+
+// REST (the remaining part) because on LEFT side of "="
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+// the rest pattern has to always be at the end
+
+//objects
+
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(weekdays);
+
+// 2. Functions
+
+const add = function(...numbers) {
+  let sum = 0;
+  for(let i = 0; i<numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+
+restaurant.orderPizza('mushrooms');
