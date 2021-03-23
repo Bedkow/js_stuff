@@ -172,7 +172,7 @@ const restaurantCopy = {...restaurant}; //copy obj
 restaurantCopy.name = 'Ristorante Roma'; //overwrite name
 */
 
-
+/*
 //@@@@@@@@@@@@@@@@@@@@@@ THE REST PATTERN @@@@@@@@@@@@@
 // opposite of the spread operator
 //to "pack" an array/object
@@ -215,3 +215,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 
 restaurant.orderPizza('mushrooms');
+*/
+
+//@@@@@@@@@@ Short Circuting (&&) @@@@@@@@@@@@@@@@@@
+
