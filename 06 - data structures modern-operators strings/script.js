@@ -219,3 +219,6 @@ restaurant.orderPizza('mushrooms');
 
 //@@@@@@@@@@ Short Circuting (&&) @@@@@@@@@@@@@@@@@@
 
+//@@@@@@@@@@ !! skipping to section '16' !! for the sake of completing my project @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+//
