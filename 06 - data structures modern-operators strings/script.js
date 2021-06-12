@@ -28,23 +28,22 @@ const restaurant = {
   orderDelivery: function ({
     starterIndex = 1,
     mainIndex = 0,
-    time = '20:00', 
+    time = '20:00',
     address,
   }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-      );
+    );
   },
-  orderPasta: function(ing1, ing2, ing3) {
+  orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1}, ${ing2}, and ${ing3}`);
   },
 
-  orderPizza: function(mainIngredient, ...otherIngredients) {
+  orderPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
 };
-
 
 /*
 //@@@@@@@@@@@@@@@ Arrays @@@@@@@@@@@@@@//
@@ -218,7 +217,61 @@ restaurant.orderPizza('mushrooms');
 */
 
 //@@@@@@@@@@ Short Circuting (&&) @@@@@@@@@@@@@@@@@@
+// - || returns the 1st truthy value
+// - && returns the 1st falsy value
+// - ?? returns the 1st nullish value (null or undefined)
 
-//@@@@@@@@@@ !! skipping to section '16' !! for the sake of completing my project @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//challenge 1
 
-//
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1
+const players1 = game.players[0];
+const players2 = game.players[1];
+
+//2
+const [gk, ...fieldPlayers] = players1;
+
+//3
+const allPlayers = [...players1, ...players2];
+
+//4
